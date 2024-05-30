@@ -5,31 +5,29 @@ function aggiornaDatiMeteo() {
 
     const REQUEST_URL = "data/datiMeteo.json";
 
-    const REQUEST = new XMLHttpRequest();
+    fetch(REQUEST_URL, {  
+        headers: {
+            'Accept': 'application/json'  // n.b. di default il metodo HTTP è GET
+        }
+    })
+        .then(datiMeteoRaw => datiMeteoRaw.json())
+        .then(datiMeteo => elabora(datiMeteo))
+}
 
-    REQUEST.open("get", REQUEST_URL, true);
+function elabora(datiMeteo) {
 
-    REQUEST.responseType = "json";
-
-    REQUEST.send();
-
-    REQUEST.onload = function () {
-     
-            const DATI_METEO = REQUEST.response;
-            const TEMPERATURA = document.getElementById("TEMPERATURA");
-            TEMPERATURA.innerHTML = DATI_METEO.current.temperature_2m + 
-                                    DATI_METEO.current_units.temperature_2m;
-            const WEATHER = document.getElementById("WEATHER");
-            WEATHER.innerHTML = testoMeteo(DATI_METEO.current.weather_code);
-            const SUNRISE = document.getElementById("SUNRISE");
-            SUNRISE.innerHTML = DATI_METEO.daily.sunrise[0].substring(11, 16);
-            const SUNSET = document.getElementById("SUNSET");
-            SUNSET.innerHTML = DATI_METEO.daily.sunset[0].substring(11, 16);
-            const WIND_SPEED = document.getElementById("WIND_SPEED");
-            WIND_SPEED.innerHTML = DATI_METEO.current.wind_speed_10m + 
-                                    DATI_METEO.current_units.wind_speed_10m;
-                  
-    }
+    const TEMPERATURA = document.getElementById("TEMPERATURA");
+    TEMPERATURA.innerHTML = datiMeteo.current.temperature_2m +
+        datiMeteo.current_units.temperature_2m;
+    const WEATHER = document.getElementById("WEATHER");
+    WEATHER.innerHTML = testoMeteo(datiMeteo.current.weather_code);
+    const SUNRISE = document.getElementById("SUNRISE");
+    SUNRISE.innerHTML = datiMeteo.daily.sunrise[0].substring(11, 16);
+    const SUNSET = document.getElementById("SUNSET");
+    SUNSET.innerHTML = datiMeteo.daily.sunset[0].substring(11, 16);
+    const WIND_SPEED = document.getElementById("WIND_SPEED");
+    WIND_SPEED.innerHTML = datiMeteo.current.wind_speed_10m +
+        datiMeteo.current_units.wind_speed_10m;
 }
 
 function testoMeteo(weatherCode) {
