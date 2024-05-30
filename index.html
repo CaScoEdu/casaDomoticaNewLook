@@ -93,16 +93,19 @@
 
 			<section id="tableDispositivi">
 
-				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+					onclick='commuta("cucina principale");'>
 					<div class="w3-cell">
-						<img src="img/lightBulb_ON.png" alt="ON">
+						<img id="cucina principale" src="img/lightBulb_OFF.png" alt="OFF" title="cucina principale OFF">
 					</div>
 					<div class="w3-cell">principale</div>
 				</article>
 
-				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+					onclick='commuta("cucina sottopensile");'>
 					<div class="w3-cell">
-						<img src="img/lightBulb_OFF.png" alt="OFF">
+						<img id="cucina sottopensile" src="img/lightBulb_OFF.png" alt="OFF"
+							title="cucina sottopensile OFF">
 					</div>
 					<div class="w3-cell">sottopensile</div>
 				</article>
@@ -147,23 +150,28 @@
 			</header>
 
 			<section id="tableDispositivi">
-				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+
+				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+					onclick='commuta("sala principale");'>
 					<div class="w3-cell">
-						<img src="img/lightBulb_OFF.png" alt="OFF">
+						<img id="sala principale" src="img/lightBulb_OFF.png" alt="OFF" title="sala principale OFF">
 					</div>
 					<div class="w3-cell">principale</div>
 				</article>
 
-				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+					onclick='commuta("sala piantana");'>
 					<div class="w3-cell">
-						<img src="img/lightBulb_OFF.png" alt="OFF">
+						<img id="sala piantana" src="img/lightBulb_OFF.png" alt="OFF" title="sala piantana OFF">
 					</div>
 					<div class="w3-cell">piantana</div>
 				</article>
 
-				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+					onclick='commuta("sala tavolo da pranzo");'>
 					<div class="w3-cell">
-						<img src="img/lightBulb_ON.png" alt="ON">
+						<img id="sala tavolo da pranzo" src="img/lightBulb_OFF.png" alt="OFF"
+							title="sala tavolo da pranzo OFF">
 					</div>
 					<div class="w3-cell">tavolo da pranzo</div>
 				</article>
@@ -207,16 +215,18 @@
 
 			<section id="tableDispositivi">
 
-				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+					onclick='commuta("camera principale");'>
 					<div class="w3-cell">
-						<img src="img/lightBulb_OFF.png" alt="OFF">
+						<img id="camera principale" src="img/lightBulb_OFF.png" alt="OFF" title="camera principale OFF">
 					</div>
 					<div class="w3-cell">principale</div>
 				</article>
 
-				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+				<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+					onclick='commuta("camera abat-jour");'>
 					<div class="w3-cell">
-						<img src="img/lightBulb_ON.png" alt="ON">
+						<img id="camera abat-jour" src="img/lightBulb_OFF.png" alt="OFF" title="camera abat-jour OFF">
 					</div>
 					<div class="w3-cell">abat-jour</div>
 				</article>
@@ -259,16 +269,20 @@
 
 				<section id="tableDispositivi">
 
-					<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+					<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+						onclick='commuta("bagno principale");'>
 						<div class="w3-cell">
-							<img src="img/lightBulb_OFF.png" alt="OFF">
+							<img id="bagno principale" src="img/lightBulb_OFF.png" alt="OFF"
+								title="bagno principale OFF">
 						</div>
 						<div class="w3-cell">principale</div>
 					</article>
 
-					<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom">
+					<article class="w3-button w3-round-xxlarge w3-block w3-theme-action w3-margin-bottom"
+						onclick='commuta("bagno specchio");'>
 						<div class="w3-cell">
-							<img src="img/lightBulb_ON.png" alt="ON">
+							<img id="bagno specchio" src="img/lightBulb_OFF.png" alt="OFF"
+								title="bagno specchio OFF">
 						</div>
 						<div class="w3-cell">specchio</div>
 					</article>
@@ -293,21 +307,23 @@
 			<nav class="w3-cell-row " id="tableAmbienti">
 
 				<a href="#cucina" class="w3-cell w3-button   w3-round-xxlarge w3-theme-action" title="cucina">
-						<img class="w3-image" src="img/kitchen_100.png" alt="CUCINA">
+					<img class="w3-image" src="img/kitchen_100.png" alt="CUCINA">
 				</a>
-				<a href="#sala" class="w3-cell w3-button w3-round-xxlarge w3-theme-action" title=" sala">					
-						<img class="w3-image" src="img/sittingroom_100.png" alt="SITTING ROOM">		
+				<a href="#sala" class="w3-cell w3-button w3-round-xxlarge w3-theme-action" title=" sala">
+					<img class="w3-image" src="img/sittingroom_100.png" alt="SITTING ROOM">
 				</a>
-				<a href="#camera" class="w3-cell  w3-button w3-round-xxlarge w3-theme-action" title="camera">				
-						<img class="w3-image" src="img/bedroom_100.png" alt="CAMERA">				
+				<a href="#camera" class="w3-cell  w3-button w3-round-xxlarge w3-theme-action" title="camera">
+					<img class="w3-image" src="img/bedroom_100.png" alt="CAMERA">
 				</a>
-				<a href="#bagno" class="w3-cell w3-button w3-round-xxlarge w3-theme-action" title="bagno">				
-						<img class="w3-image" src="img/bathroom_100.png" alt="BAGNO">			
+				<a href="#bagno" class="w3-cell w3-button w3-round-xxlarge w3-theme-action" title="bagno">
+					<img class="w3-image" src="img/bathroom_100.png" alt="BAGNO">
 				</a>
 
 			</nav>
 
 		</footer>
+
+		<script src="js/lampade.js"></script>
 
 </body>
 
