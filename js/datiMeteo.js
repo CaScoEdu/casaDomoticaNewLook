@@ -10,8 +10,8 @@ function aggiornaDatiMeteo() {
             'Accept': 'application/json'  // n.b. di default il metodo HTTP è GET
         }
     })
-        .then(datiMeteoRaw => datiMeteoRaw.json())
-        .then(datiMeteo => elabora(datiMeteo))
+        .then(datiMeteoReadableStream => datiMeteoReadableStream.json()) 
+        .then(datiMeteoJsonObject => elabora(datiMeteoJsonObject))
 }
 
 function elabora(datiMeteo) {
